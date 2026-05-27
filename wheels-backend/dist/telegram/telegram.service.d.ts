@@ -1,0 +1,30 @@
+import { OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { ConfigService } from '@nestjs/config';
+import { Booking } from '../bookings/entities/booking.entity';
+import { RentOutRequest } from '../rent-out/entities/rent-out-request.entity';
+export declare class TelegramService implements OnModuleInit, OnModuleDestroy {
+    private bookingsRepo;
+    private rentOutRepo;
+    private config;
+    private readonly log;
+    private bot;
+    private adminChatId;
+    private dateRanges;
+    private searchQueue;
+    constructor(bookingsRepo: Repository<Booking>, rentOutRepo: Repository<RentOutRequest>, config: ConfigService);
+    onModuleInit(): Promise<void>;
+    onModuleDestroy(): Promise<void>;
+    notifyBooking(booking: Booking): Promise<void>;
+    notifyRentOut(req: RentOutRequest): Promise<void>;
+    private registerHandlers;
+    private clearSearch;
+    private promptSearch;
+    private promptSearchFromInline;
+    private showNew;
+    private showStats;
+    private buildWhere;
+    private renderList;
+    private renderDetail;
+    private execAction;
+}

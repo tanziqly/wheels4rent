@@ -1,0 +1,876 @@
+export type Lang = 'RU' | 'ENG';
+
+const t = {
+  RU: {
+    // ─── Header ───────────────────────────────────────────────
+    header: {
+      navCatalog: 'Каталог',
+      navConditions: 'Условия',
+      navReviews: 'Отзывы',
+      mobileDiscounts: 'Акции',
+      mobileUseCases: 'Услуги',
+      mobileCertificate: 'Сертификат',
+      mobilePlaces: 'Куда поехать',
+      rentOut: 'Сдать авто',
+    },
+
+    // ─── Footer ───────────────────────────────────────────────
+    footer: {
+      tagline: 'Сервис аренды премиальных автомобилей в Москве. Работаем круглосуточно.',
+      navTitle: 'Навигация',
+      sectionsTitle: 'Разделы',
+      contactsTitle: 'Контакты',
+      copyright: 'Все права защищены.',
+      madeBy: 'Разработка сайта —',
+      madeByStudio: 'premium web studio',
+      links: {
+        catalog: 'Каталог',
+        conditions: 'Условия',
+        reviews: 'Отзывы',
+        discounts: 'Акции',
+        useCases: 'Услуги',
+        certificate: 'Сертификат',
+        places: 'Куда поехать',
+        rentOut: 'Сдать авто',
+        privacy: 'Политика конфиденциальности',
+      },
+    },
+
+    // ─── Hero ─────────────────────────────────────────────────
+    hero: {
+      badge: 'Бесплатная доставка от 5 суток',
+      h1Line1: 'Аренда',
+      h1Line2: 'премиальных',
+      h1Line3: 'автомобилей',
+      subtitle: 'Прогрессивная система скидок. Доставка по Москве и МО. Круглосуточная поддержка без выходных.',
+      ctaPrimary: 'Выбрать автомобиль',
+      ctaSecondary: 'Связаться с нами',
+      statCars: 'автомобилей в парке',
+      statRating: 'средний рейтинг',
+      statYears: 'лет на рынке',
+      floatAvailable: 'Доступно сейчас',
+      floatCategory: 'Спорткары',
+      floatFrom: 'от 11 000 ₽',
+      floatPerDay: 'в сутки',
+      saleBadge: 'Лучшие акции месяца — смотреть',
+    },
+
+    // ─── Benefits ─────────────────────────────────────────────
+    benefits: {
+      tag: 'Преимущества',
+      h2Line1: 'Честный сервис',
+      h2Line2: 'без скрытых условий',
+      subtitle: 'Прозрачные условия, чёткие договорённости и автомобили, которые не разочаруют.',
+      marqueeItems: ['Доставка', 'Безлимит', 'Конфиденциальность', 'Залог в день', 'Любой регион', 'Без ограничений'],
+      items: [
+        { title: 'Доставка по всей России', desc: 'Привезём автомобиль в любую точку страны по вашему запросу' },
+        { title: 'Залог в день возврата', desc: 'Возвращаем залог сразу при сдаче автомобиля без задержек' },
+        { title: 'Безлимитный пробег', desc: 'Никаких ограничений по километражу — едьте столько, сколько нужно' },
+        { title: 'Выезд в любой регион', desc: 'Поездки за пределы Москвы доступны по договорённости' },
+        { title: 'Без записи в салоне', desc: 'Ни видео, ни аудио — полная конфиденциальность поездки' },
+        { title: 'Безлимитная скорость', desc: 'Полный потенциал автомобиля в вашем распоряжении' },
+      ],
+    },
+
+    // ─── Catalog Section ─────────────────────────────────────
+    catalogSection: {
+      tag: 'Автопарк',
+      h2Line1: 'Арендуйте автомобиль',
+      h2Line2: 'в идеальном состоянии',
+      subtitle: 'Каждый автомобиль проходит полную диагностику и детейлинг перед подачей',
+      tabs: [
+        { slug: 'new', label: 'Новые поступления' },
+        { slug: 'sedans', label: 'Седаны' },
+        { slug: 'suv', label: 'Внедорожники' },
+        { slug: 'sport', label: 'Спорткары' },
+        { slug: 'minivan', label: 'Минивэны' },
+        { slug: 'electric', label: 'Электрокары' },
+        { slug: 'cabrio', label: 'Кабриолеты' },
+      ],
+      btnDetails: 'Подробнее',
+      btnRent: 'Арендовать',
+      btnAllCatalog: 'Смотреть весь каталог',
+      driveLabel: 'Привод:',
+      seats: (n: number) => n === 1 ? '1 место' : n < 5 ? `${n} места` : `${n} мест`,
+    },
+
+    // ─── How it works ─────────────────────────────────────────
+    howItWorks: {
+      tag: 'Как это работает',
+      h2Line1: 'Быстрая аренда',
+      h2Line2: 'за 4 шага',
+      steps: [
+        { title: 'Бронирование', desc: 'Оставьте заявку на сайте или позвоните нам. Менеджер свяжется с вами в течение 15 минут.' },
+        { title: 'Подписание договора', desc: 'Приезжайте в офис, подписываем договор, вносите оплату и залог. Занимает не более 20 минут.' },
+        { title: 'Получение', desc: 'Забираете автомобиль в офисе или мы доставляем его по нужному адресу в Москве и МО.' },
+        { title: 'В путь', desc: 'Автомобиль ваш. Наслаждайтесь поездкой — мы на связи, если понадобится помощь.' },
+      ],
+    },
+
+    // ─── Conditions ───────────────────────────────────────────
+    conditions: {
+      tag: 'Условия',
+      h2Line1: 'Всего 3 условия',
+      h2Line2: 'для старта',
+      subtitle: 'Никаких скрытых требований. Минимальный пакет документов.',
+      items: [
+        { title: 'Возраст от 19 лет', desc: 'Принимаем водителей с 19 лет. Максимальный возраст не ограничен.' },
+        { title: 'Стаж от 1 года', desc: 'Минимальный водительский стаж — 1 год с момента получения прав.' },
+        { title: 'Документы', desc: 'Граждане РФ: паспорт + водительское удостоверение. Иностранцы: национальный паспорт + ВУ международного образца.' },
+      ],
+    },
+
+    // ─── Discounts ────────────────────────────────────────────
+    discounts: {
+      tag: 'Лояльность',
+      h2Line1: 'Прогрессивная система',
+      h2Line2: 'скидок и привилегий',
+      subtitle: 'Чем чаще вы арендуете — тем выгоднее каждая следующая поездка',
+      tiers: [
+        { level: 'Classic', pct: '3%', desc: 'С первого бронирования' },
+        { level: 'Black', pct: '5%', desc: 'После нескольких поездок' },
+        { level: 'Silver', pct: '7%', desc: 'Для постоянных клиентов' },
+        { level: 'Gold', pct: '10%', desc: 'Привилегированный статус' },
+        { level: 'Platinum', pct: '15–20%', desc: 'Максимальный уровень' },
+      ],
+      specials: [
+        { title: 'Приведи друга', pct: '5%', desc: 'Скидка по персональному промокоду при приведении нового клиента' },
+        { title: 'День рождения', pct: '15%', desc: 'Скидка за 3 дня до и 3 дня после дня рождения — отпразднуйте за рулём' },
+      ],
+      giftCta: 'Подарочный сертификат на аренду —',
+      giftCtaLink: 'оформить онлайн',
+    },
+
+    // ─── Reviews ──────────────────────────────────────────────
+    reviews: {
+      tag: 'Отзывы',
+      h2: 'Клиенты о нас',
+      clientLabel: 'Клиент Wheels4Rent',
+      items: [
+        { text: 'Брал внедорожник на 10 дней, поехали с семьёй на юг. Машина в идеальном состоянии, всё работало безупречно. Доставили прямо к подъезду, забрали там же. Никаких сюрпризов.', name: 'Виктор Г.' },
+        { text: 'Арендовала кабриолет на выходные — хотела особого настроения. Получила его сполна. Менеджер был на связи и ответил на все вопросы моментально. Вернусь точно.', name: 'Наталья Ж.' },
+        { text: 'Взял спорткар на день рождения. Впечатление от автомобиля — выше всяких ожиданий. Честные условия, без подводных камней. Залог вернули в тот же день.', name: 'Дмитрий Т.' },
+        { text: 'Пользуюсь уже третий год для деловых поездок. Сервис стабильно высокого уровня, авто всегда чистое и заправленное. Карта лояльности реально работает — скидка ощутима.', name: 'Герам К.' },
+        { text: 'Снимала минивэн для большой компании. Всё организовали чётко: договор, страховка, инструктаж. Очень приятно работать с профессионалами, которые знают своё дело.', name: 'Евгения С.' },
+        { text: 'Первый раз арендовал автомобиль в Москве. Думал, будет сложно, но всё прошло без проблем. Менеджер Wheels4Rent объяснил всё доступно. Рекомендую без сомнений.', name: 'Николай А.' },
+      ],
+    },
+
+    // ─── Booking form ─────────────────────────────────────────
+    booking: {
+      tag: 'Бронирование',
+      h2Line1: 'Оставьте заявку —',
+      h2Line2: 'перезвоним за 15 минут',
+      subtitle: 'Менеджер подберёт оптимальный вариант и ответит на все вопросы. Работаем круглосуточно.',
+      steps: [
+        { n: '01', t: 'Оставьте заявку', d: 'Заполните форму или позвоните нам' },
+        { n: '02', t: 'Согласование', d: 'Менеджер подтвердит наличие и стоимость' },
+        { n: '03', t: 'Получение авто', d: 'Доставка или самовывоз из офиса' },
+      ],
+      labelName: 'Ваше имя',
+      labelPhone: 'Номер телефона',
+      labelDateStart: 'Дата начала',
+      labelDateEnd: 'Дата окончания',
+      labelComment: 'Комментарий',
+      placeholderName: 'Александр',
+      placeholderComment: 'Уточните пожелания: модель, дополнительное оборудование...',
+      deliveryLabel: 'Способ получения',
+      deliveryYes: 'Доставка по Москве',
+      deliveryNo: 'Заберу из офиса',
+      submit: 'Подтвердить бронь',
+      privacyText: 'Отправляя форму, вы соглашаетесь с',
+      privacyLink: 'политикой конфиденциальности',
+      successTitle: 'Заявка принята',
+      successText: 'Мы свяжемся с вами в течение 15 минут',
+    },
+
+    // ─── FAQ ──────────────────────────────────────────────────
+    faq: {
+      tag: 'FAQ',
+      h2Line1: 'Часто',
+      h2Line2: 'задаваемые',
+      h2Line3: 'вопросы',
+      subtitle: 'Не нашли ответ? Позвоните или напишите — ответим в течение нескольких минут.',
+      cta: 'Задать вопрос',
+      items: [
+        { q: 'Есть ли лимит по пробегу?', a: 'Нет. Все автомобили в нашем парке предоставляются с безлимитным пробегом — катайтесь столько, сколько нужно.' },
+        { q: 'Что делать, если не успеваю сдать автомобиль вовремя?', a: 'Позвоните менеджеру заранее. Мы всегда идём навстречу и согласуем продление аренды, если автомобиль свободен.' },
+        { q: 'Есть ли ограничения по скорости?', a: 'Нет ограничений по максимальной скорости с нашей стороны. Соблюдайте требования ПДД и здравый смысл.' },
+        { q: 'Есть ли ограничения по территории передвижения?', a: 'Автомобили можно использовать по всей России. Выезд за рубеж возможен по отдельному согласованию.' },
+        { q: 'Есть ли услуга доставки автомобиля?', a: 'Да. Доставляем и забираем автомобиль в пределах МКАД. Доставка за МКАД — по согласованию с менеджером.' },
+        { q: 'Требуется залог?', a: 'Да, залог вносится при подписании договора и возвращается в день сдачи автомобиля — без задержек.' },
+        { q: 'Можно ли вернуть автомобиль раньше срока?', a: 'Можно. Сообщите об этом менеджеру заранее. Условия досрочного возврата прописаны в договоре аренды.' },
+        { q: 'Есть ли услуга аренды авто с водителем?', a: 'В базовой комплектации автомобили предоставляются без водителя. Для индивидуальных запросов уточняйте у менеджера.' },
+        { q: 'Можно ли сдать автомобиль в грязном виде?', a: 'Автомобиль принимается в том виде, в котором был выдан. При возврате в грязном состоянии взимается дополнительная плата за уборку.' },
+        { q: 'Можно ли сдать автомобиль с пустым баком?', a: 'Нет. Автомобиль должен быть возвращён с тем же уровнем топлива, что и при выдаче.' },
+        { q: 'Как начисляется скидка по Карте лояльности?', a: 'Скидка начисляется автоматически с первого бронирования. Уровень карты повышается по мере накопленного пробега аренды.' },
+      ],
+    },
+
+    // ─── Use Cases ────────────────────────────────────────────
+    useCases: {
+      tag: 'Для чего подойдёт',
+      h2Line1: '6 причин',
+      h2Line2: 'арендовать сейчас',
+      items: [
+        { title: 'Командировки', desc: 'Прибыть на деловую встречу в представительском автомобиле — это не роскошь, а часть профессионального образа.' },
+        { title: 'Путешествия', desc: 'Исследуйте Подмосковье и дальние направления без ограничений пробега и территории.' },
+        { title: 'Тест-драйв', desc: 'Оцените автомобиль в реальных условиях перед покупкой — несколько дней аренды лучше любого тест-драйва в салоне.' },
+        { title: 'Временная замена', desc: 'Ваш автомобиль на обслуживании или в ремонте? Не меняйте ритм жизни.' },
+        { title: 'Торжественное мероприятие', desc: 'Свадьба, юбилей, значимое событие — прибудьте так, чтобы это запомнили.' },
+        { title: 'Фотосессии', desc: 'Профессиональная съёмка с роскошным автомобилем в главной роли — для контента, рекламы или личного архива.' },
+      ],
+    },
+
+    // ─── Places ───────────────────────────────────────────────
+    places: {
+      tag: 'Куда поехать',
+      h2Line1: 'Интересные места',
+      h2Line2: 'недалеко от Москвы',
+      subtitle: 'Вдохновение для следующего маршрута — от природных локаций до культурных объектов',
+      items: [
+        { region: 'Тульская обл.', title: 'Природные холмы и бирюзовые озёра', desc: 'Необычный ландшафт с карьерными водоёмами насыщенного бирюзового цвета. Идеально для фотосессий и пикников.', dist: '~3 ч от Москвы' },
+        { region: 'МО, Солнечногорский р-н', title: 'Живописное озеро XIX века', desc: 'Один из крупнейших искусственных водоёмов Подмосковья. Пляжный отдых, водные виды спорта, природные прогулки.', dist: '~1 ч от Москвы' },
+        { region: 'Калужская обл.', title: 'Арт-парк под открытым небом', desc: 'Масштабные арт-объекты среди дикой природы. Ежегодные инсталляции, архитектурные эксперименты и фестивали.', dist: '~4 ч от Москвы' },
+        { region: 'МО, Сергиев Посад', title: 'Питомник сибирских хаски', desc: 'Общение с ездовыми собаками, катание в нартах и незабываемые эмоции для всей семьи.', dist: '~2 ч от Москвы' },
+        { region: 'Калужская обл.', title: 'Этнографический парк-музей', desc: 'Тематические дворы, воссоздающие культуры разных народов мира. Интерактивные программы и живая история.', dist: '~3 ч от Москвы' },
+      ],
+    },
+
+    // ─── Team ─────────────────────────────────────────────────
+    team: {
+      tag: 'Команда',
+      h2Line1: 'Люди, которые',
+      h2Line2: 'любят своё дело',
+      serviceTag: 'Уровень сервиса',
+      serviceH3: 'Наш стандарт превосходит ожидания',
+      members: [
+        { name: 'Максим В.', role: 'Водитель-курьер', desc: 'Доставляет и забирает автомобили по Москве и Подмосковью. Расскажет об особенностях машины и нюансах городского движения.', traits: ['Пунктуальность', 'Внимательность', '7 лет опыта'] },
+        { name: 'Сергей Л.', role: 'Менеджер по аренде', desc: 'Поможет выбрать автомобиль под любые задачи, согласует условия и ответит на вопросы. Всегда на связи в рабочее время.', traits: ['Клиентоориентированность', 'Знание автопарка', 'Быстрый ответ'] },
+      ],
+      serviceItems: [
+        { t: 'Доставка и возврат', d: 'В пределах Москвы и МО по согласованному времени' },
+        { t: 'Чистота', d: 'Сухая и влажная уборка перед каждой подачей' },
+        { t: 'Диагностика', d: 'Полная проверка технического состояния перед выдачей' },
+        { t: 'Комфорт', d: 'Всё необходимое уже в автомобиле — без доплат' },
+        { t: 'Инструктаж', d: 'Расскажем об особенностях вождения и модели' },
+        { t: 'Поддержка 24/7', d: 'Менеджер доступен в любое время суток' },
+      ],
+      ctaBtn: 'Выбрать автомобиль',
+    },
+
+    // ─── Sale Promos ──────────────────────────────────────────
+    salePromos: {
+      items: [
+        { badge: 'Хит сезона', title: 'Бесплатная доставка', subtitle: 'при аренде от 5 суток', desc: 'Доставляем и забираем автомобиль в любую точку в пределах МКАД без доплаты. Работает на весь автопарк.', cta: 'Выбрать автомобиль' },
+        { badge: 'Реферальная программа', title: 'Приведи друга — получи 5%', subtitle: 'по персональному промокоду', desc: 'Получите персональный промокод и делитесь им с друзьями. Оба получают скидку при следующем бронировании.', cta: 'Получить промокод' },
+        { badge: 'Подарок', title: 'Скидка 15% в день рождения', subtitle: '±3 дня от даты рождения', desc: 'Арендуйте премиальный автомобиль со скидкой 15% в честь вашего дня рождения. Подтверждение — паспорт.', cta: 'Забронировать' },
+        { badge: 'Длительная аренда', title: 'Скидка до 20% от 30 суток', subtitle: 'карта лояльности Platinum', desc: 'При аренде от месяца и наличии карты Platinum скидка достигает 20%. Идеально для командировок.', cta: 'Узнать подробнее' },
+        { badge: 'Новинки', title: 'Первые 3 дня на новинки', subtitle: 'спецпредложение на новые поступления', desc: 'Первые арендаторы новых автомобилей в парке получают специальную цену на первые 3 суток аренды.', cta: 'Смотреть новинки' },
+        { badge: 'Раннее бронирование', title: 'Бронируй за 14+ дней', subtitle: 'фиксируем цену сегодня', desc: 'При бронировании за две недели и более фиксируем текущую стоимость и гарантируем наличие автомобиля.', cta: 'Забронировать' },
+      ],
+    },
+
+    // ─── Contacts page ────────────────────────────────────────
+    contacts: {
+      tag: 'Контакты',
+      h1Line1: 'Свяжитесь',
+      h1Line2: 'с нами',
+      messengersLabel: 'Мессенджеры',
+      mapAddress: 'Comcity B1',
+      mapStreet: 'Киевское шоссе, 22-й км, 6А стр. 1',
+      mapLink: 'Открыть на Яндекс Картах',
+      formTitle: 'Написать нам',
+      labelName: 'Имя',
+      labelPhone: 'Телефон',
+      labelTopic: 'Тема',
+      labelMessage: 'Сообщение',
+      placeholderName: 'Ваше имя',
+      placeholderMessage: 'Опишите ваш запрос...',
+      topicOptions: ['Бронирование автомобиля', 'Подарочный сертификат', 'Сдать свой автомобиль', 'Другой вопрос'],
+      submit: 'Отправить сообщение',
+      replyNote: 'Отвечаем в рабочее время в течение 15 минут',
+      successTitle: 'Сообщение отправлено',
+      successText: 'Ответим в течение нескольких минут',
+      contacts: [
+        { label: 'Телефон', value: '+7 999 920-72-52' },
+        { label: 'Email', value: 'wheels4rent.ru@gmail.com' },
+        { label: 'Адрес офиса', value: 'Comcity B1, Киевское шоссе, 22-й км, 6А стр. 1, Москва' },
+        { label: 'Режим работы', value: 'Круглосуточно, 24/7' },
+      ],
+    },
+
+    // ─── Certificate page ─────────────────────────────────────
+    certificate: {
+      tag: 'Сертификат',
+      h1Line1: 'Подарочный',
+      h1Line2: 'сертификат',
+      subtitle: 'Лучший подарок для тех, кто ценит скорость, стиль и свободу. Сертификат действует на весь автопарк без ограничений.',
+      giftCardLabel: 'Gift Card',
+      nominalLabel: 'Номинал',
+      recipientLabel: 'Получатель',
+      recipientPlaceholder: 'Имя получателя',
+      benefits: ['Действует на весь автопарк', 'Бессрочный срок действия', 'Электронный или в конверте', 'Персонализация на любое имя'],
+      denominations: [
+        { value: '5 000 ₽', desc: '1 день на седан' },
+        { value: '15 000 ₽', desc: '2–3 дня на внедорожник' },
+        { value: '30 000 ₽', desc: 'Неделя на спорткар' },
+        { value: 'Своя сумма', desc: 'Укажите нужную сумму' },
+      ],
+      customAmountPlaceholder: 'Введите сумму в ₽',
+      formTitle: 'Оформить сертификат',
+      labelSenderName: 'Ваше имя (кто дарит)',
+      labelRecipientName: 'Имя получателя',
+      labelPhone: 'Ваш телефон',
+      labelFormat: 'Формат',
+      formats: ['Электронный (PDF)', 'В фирменном конверте'],
+      labelWish: 'Пожелание (необязательно)',
+      placeholderSender: 'Александр',
+      placeholderRecipient: 'Имя на сертификате',
+      placeholderWish: 'Напишите тёплые слова...',
+      submit: 'Оформить сертификат',
+      paymentNote: 'Оплата при получении. Менеджер обсудит удобный способ.',
+      successTitle: 'Заявка оформлена',
+      successText: 'Менеджер свяжется с вами в течение 15 минут для уточнения деталей',
+      selectDenomination: 'Выберите номинал',
+    },
+
+    // ─── Rent Out page ────────────────────────────────────────
+    rentOut: {
+      tag: 'Партнёрство',
+      h1Line1: 'Сдайте авто',
+      h1Line2: 'и зарабатывайте',
+      subtitle: 'Передайте автомобиль в управление Wheels4Rent и получайте стабильный доход. Мы берём на себя всё — клиентов, страховку, обслуживание.',
+      howItWorksLabel: 'Как это работает',
+      benefits: [
+        { title: 'Стабильный доход', desc: 'Ваш автомобиль приносит до 80 000 ₽ в месяц, пока простаивает в гараже.' },
+        { title: 'Полная страховка', desc: 'КАСКО на весь период аренды. Мы несём ответственность за сохранность.' },
+        { title: 'Обслуживание за наш счёт', desc: 'ТО, мойка и мелкий ремонт — всё включено. Вы получаете авто чистым.' },
+        { title: 'Прозрачная отчётность', desc: 'Личный кабинет с данными о каждой аренде, выплатах и пробеге в реальном времени.' },
+        { title: 'Гибкий график', desc: 'Сами решаете когда сдавать: на выходные, в будни или круглосуточно.' },
+        { title: 'Проверенные клиенты', desc: 'Строгая верификация арендаторов — водительский стаж, паспорт, залог.' },
+      ],
+      steps: [
+        { title: 'Оставьте заявку', desc: 'Заполните форму или позвоните нам. Менеджер перезвонит в течение 15 минут и ответит на все вопросы.' },
+        { title: 'Подпишите договор', desc: 'Оценим состояние автомобиля, согласуем условия и подпишем договор. Занимает 1 час.' },
+        { title: 'Получайте доход', desc: 'Авто работает в нашем флоте, вы получаете выплаты дважды в месяц на карту.' },
+      ],
+      requirementsTitle: 'Требования к автомобилю',
+      requirements: ['Автомобиль не старше 5 лет', 'Пробег до 120 000 км', 'Отсутствие залогов и ограничений', 'Техническая исправность', 'Регистрация в Москве или МО'],
+      incomeTag: 'Пример дохода',
+      incomeItems: [{ label: 'Седан', amount: '40 000 ₽' }, { label: 'Внедорожник', amount: '65 000 ₽' }, { label: 'Спорткар', amount: '90 000 ₽' }],
+      incomeNote: 'Средние показатели при загрузке 20 дней в месяц',
+      formTitle: 'Оставить заявку',
+      labelName: 'Ваше имя',
+      labelPhone: 'Телефон',
+      labelCarType: 'Тип автомобиля',
+      carTypes: ['Седан', 'Внедорожник', 'Спорткар', 'Другой'],
+      labelModel: 'Марка и модель',
+      labelYear: 'Год выпуска',
+      labelMileage: 'Пробег, км',
+      labelComment: 'Комментарий (необязательно)',
+      placeholderName: 'Александр',
+      placeholderModel: 'BMW X5 2022',
+      placeholderYear: '2021',
+      placeholderMileage: '45 000',
+      placeholderComment: 'Доп. оборудование, особенности...',
+      submit: 'Отправить заявку',
+      privacyNote: 'Нажимая кнопку, вы соглашаетесь на обработку персональных данных',
+      successTitle: 'Заявка отправлена',
+      successText: 'Менеджер свяжется с вами в течение 15 минут для обсуждения условий',
+    },
+
+    // ─── Catalog page ─────────────────────────────────────────
+    catalogPage: {
+      searchPlaceholder: 'Поиск по названию...',
+      driveLabel: 'Привод:',
+      driveOptions: [
+        { key: 'all', label: 'Все' },
+        { key: 'Полный', label: 'Полный' },
+        { key: 'Задний', label: 'Задний' },
+        { key: 'Передний', label: 'Передний' },
+      ],
+      sortDefault: 'По умолчанию',
+      sortPriceAsc: 'Цена: сначала дешевле',
+      sortPriceDesc: 'Цена: сначала дороже',
+      resetBtn: 'Сбросить',
+      found: (n: number) => `Найдено: ${n} автомобилей`,
+      emptyTitle: 'Автомобили по заданным фильтрам не найдены',
+      emptyReset: 'Сбросить фильтры',
+      btnDetails: 'Подробнее',
+      btnRent: 'Арендовать',
+      seats: (n: number) => `${n} мест`,
+    },
+
+    // ─── Car page ─────────────────────────────────────────────
+    carPage: {
+      breadHome: 'Главная',
+      breadCatalog: 'Каталог',
+      specsTitle: 'Технические характеристики',
+      aboutTitle: 'Об автомобиле',
+      similarTitle: 'Похожие автомобили',
+      similarAll: 'Смотреть все',
+      specLabels: { engine: 'Двигатель', power: 'Мощность', seats: 'Мест', drive: 'Привод', transmission: 'Трансмиссия' },
+      priceLabel: 'Стоимость аренды',
+      pricePerDay: 'в сутки · включая НДС',
+      pricePerks: ['Безлимитный пробег', 'Доставка от 5 суток', 'Залог возврат в день сдачи', 'Полная диагностика перед выдачей'],
+      bookNowBtn: 'Забронировать',
+      formTitle: 'Оставить заявку',
+      labelCar: 'Автомобиль',
+      labelName: 'Ваше имя',
+      labelPhone: 'Телефон',
+      labelDateStart: 'Дата начала',
+      labelDateEnd: 'Дата конца',
+      deliveryYes: 'Доставка',
+      deliveryNo: 'Из офиса',
+      submitBtn: 'Отправить заявку',
+      privacyText: 'Нажимая кнопку, вы соглашаетесь с',
+      privacyLink: 'политикой конфиденциальности',
+      successTitle: 'Заявка принята',
+      successText: 'Перезвоним в течение 15 минут',
+      successResend: 'Отправить ещё',
+      backBtn: 'Вернуться в каталог',
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // ENGLISH
+  // ═══════════════════════════════════════════════════════════
+  ENG: {
+    header: {
+      navCatalog: 'Catalog',
+      navConditions: 'Terms',
+      navReviews: 'Reviews',
+      mobileDiscounts: 'Deals',
+      mobileUseCases: 'Services',
+      mobileCertificate: 'Gift Card',
+      mobilePlaces: 'Destinations',
+      rentOut: 'List Your Car',
+    },
+
+    footer: {
+      tagline: 'Premium car rental service in Moscow. Available 24/7.',
+      navTitle: 'Navigation',
+      sectionsTitle: 'Pages',
+      contactsTitle: 'Contacts',
+      copyright: 'All rights reserved.',
+      madeBy: 'Website by —',
+      madeByStudio: 'premium web studio',
+      links: {
+        catalog: 'Catalog',
+        conditions: 'Terms',
+        reviews: 'Reviews',
+        discounts: 'Deals',
+        useCases: 'Services',
+        certificate: 'Gift Card',
+        places: 'Destinations',
+        rentOut: 'List Your Car',
+        privacy: 'Privacy Policy',
+      },
+    },
+
+    hero: {
+      badge: 'Free delivery from 5 days',
+      h1Line1: 'Premium',
+      h1Line2: 'car',
+      h1Line3: 'rental',
+      subtitle: 'Progressive discount system. Delivery across Moscow. 24/7 customer support.',
+      ctaPrimary: 'Browse fleet',
+      ctaSecondary: 'Contact us',
+      statCars: 'cars in fleet',
+      statRating: 'average rating',
+      statYears: 'years in business',
+      floatAvailable: 'Available now',
+      floatCategory: 'Sports cars',
+      floatFrom: 'from ₽11,000',
+      floatPerDay: 'per day',
+      saleBadge: 'Best deals this month — view',
+    },
+
+    benefits: {
+      tag: 'Benefits',
+      h2Line1: 'Honest service',
+      h2Line2: 'no hidden terms',
+      subtitle: 'Transparent conditions, clear agreements and cars that won\'t disappoint.',
+      marqueeItems: ['Delivery', 'Unlimited', 'Privacy', 'Same-day deposit', 'Any region', 'No limits'],
+      items: [
+        { title: 'Delivery across Russia', desc: 'We\'ll bring the car to any location in the country on request' },
+        { title: 'Same-day deposit return', desc: 'Deposit is returned immediately upon car return, no delays' },
+        { title: 'Unlimited mileage', desc: 'No mileage restrictions — drive as much as you need' },
+        { title: 'Travel to any region', desc: 'Trips outside Moscow are available by arrangement' },
+        { title: 'No in-car recording', desc: 'No video or audio — complete privacy for your journey' },
+        { title: 'Unlimited speed', desc: 'The car\'s full potential is at your disposal' },
+      ],
+    },
+
+    catalogSection: {
+      tag: 'Fleet',
+      h2Line1: 'Rent a car',
+      h2Line2: 'in perfect condition',
+      subtitle: 'Every car undergoes full diagnostics and detailing before delivery',
+      tabs: [
+        { slug: 'new', label: 'New Arrivals' },
+        { slug: 'sedans', label: 'Sedans' },
+        { slug: 'suv', label: 'SUVs' },
+        { slug: 'sport', label: 'Sports Cars' },
+        { slug: 'minivan', label: 'Minivans' },
+        { slug: 'electric', label: 'Electric' },
+        { slug: 'cabrio', label: 'Convertibles' },
+      ],
+      btnDetails: 'Details',
+      btnRent: 'Rent',
+      btnAllCatalog: 'View full catalog',
+      driveLabel: 'Drive:',
+      seats: (n: number) => n === 1 ? '1 seat' : `${n} seats`,
+    },
+
+    howItWorks: {
+      tag: 'How it works',
+      h2Line1: 'Rent fast',
+      h2Line2: 'in 4 steps',
+      steps: [
+        { title: 'Book', desc: 'Submit a request on the website or call us. A manager will contact you within 15 minutes.' },
+        { title: 'Sign the agreement', desc: 'Visit our office, sign the contract, make payment and deposit. Takes no more than 20 minutes.' },
+        { title: 'Pick up', desc: 'Collect the car at our office or we deliver it to your address in Moscow & region.' },
+        { title: 'Hit the road', desc: 'The car is yours. Enjoy your drive — we\'re available if you need help.' },
+      ],
+    },
+
+    conditions: {
+      tag: 'Requirements',
+      h2Line1: 'Just 3 requirements',
+      h2Line2: 'to get started',
+      subtitle: 'No hidden requirements. Minimal document package.',
+      items: [
+        { title: 'Age 19+', desc: 'We accept drivers from 19 years old. No maximum age limit.' },
+        { title: '1+ year of experience', desc: 'Minimum driving experience — 1 year from the date of license issue.' },
+        { title: 'Documents', desc: 'Russian citizens: passport + driver\'s license. Foreigners: national passport + international driver\'s license.' },
+      ],
+    },
+
+    discounts: {
+      tag: 'Loyalty',
+      h2Line1: 'Progressive discount',
+      h2Line2: 'and rewards system',
+      subtitle: 'The more you rent — the better the deal on every next trip',
+      tiers: [
+        { level: 'Classic', pct: '3%', desc: 'From first booking' },
+        { level: 'Black', pct: '5%', desc: 'After a few trips' },
+        { level: 'Silver', pct: '7%', desc: 'For regular customers' },
+        { level: 'Gold', pct: '10%', desc: 'Privileged status' },
+        { level: 'Platinum', pct: '15–20%', desc: 'Maximum level' },
+      ],
+      specials: [
+        { title: 'Refer a friend', pct: '5%', desc: 'Discount via personal promo code when you refer a new client' },
+        { title: 'Birthday', pct: '15%', desc: '3 days before and after your birthday — celebrate behind the wheel' },
+      ],
+      giftCta: 'Gift certificate for rental —',
+      giftCtaLink: 'order online',
+    },
+
+    reviews: {
+      tag: 'Reviews',
+      h2: 'What clients say',
+      clientLabel: 'Wheels4Rent client',
+      items: [
+        { text: 'Rented an SUV for 10 days and drove south with my family. The car was in perfect condition, everything worked flawlessly. Delivered right to our door and picked up the same way. No surprises.', name: 'Viktor G.' },
+        { text: 'Rented a convertible for the weekend — wanted something special. Got exactly that. The manager was always available and answered all my questions instantly. Will definitely be back.', name: 'Natalia Z.' },
+        { text: 'Took a sports car for my birthday. The experience was beyond all expectations. Honest terms, no hidden catches. Deposit returned the same day.', name: 'Dmitry T.' },
+        { text: 'Using the service for business trips for three years now. Consistently high quality, car is always clean and fuelled. The loyalty card really works — the discount is noticeable.', name: 'Geram K.' },
+        { text: 'Rented a minivan for a large group. Everything was organised perfectly: contract, insurance, briefing. It\'s a pleasure working with professionals who know their business.', name: 'Evgenia S.' },
+        { text: 'First time renting a car in Moscow. I thought it would be complicated, but everything went smoothly. The Wheels4Rent manager explained everything clearly. Highly recommend.', name: 'Nikolai A.' },
+      ],
+    },
+
+    booking: {
+      tag: 'Booking',
+      h2Line1: 'Submit a request —',
+      h2Line2: 'we\'ll call back in 15 min',
+      subtitle: 'Our manager will find the best option and answer all questions. Available 24/7.',
+      steps: [
+        { n: '01', t: 'Submit request', d: 'Fill out the form or call us' },
+        { n: '02', t: 'Confirmation', d: 'Manager confirms availability and price' },
+        { n: '03', t: 'Get the car', d: 'Delivery or pick-up from our office' },
+      ],
+      labelName: 'Your name',
+      labelPhone: 'Phone number',
+      labelDateStart: 'Start date',
+      labelDateEnd: 'End date',
+      labelComment: 'Comment',
+      placeholderName: 'Alexander',
+      placeholderComment: 'Specify preferences: model, additional equipment...',
+      deliveryLabel: 'Pick-up method',
+      deliveryYes: 'Delivery in Moscow',
+      deliveryNo: 'Pick up from office',
+      submit: 'Confirm booking',
+      privacyText: 'By submitting the form, you agree to the',
+      privacyLink: 'privacy policy',
+      successTitle: 'Request received',
+      successText: 'We will contact you within 15 minutes',
+    },
+
+    faq: {
+      tag: 'FAQ',
+      h2Line1: 'Frequently',
+      h2Line2: 'asked',
+      h2Line3: 'questions',
+      subtitle: 'Didn\'t find an answer? Call or message us — we\'ll respond within minutes.',
+      cta: 'Ask a question',
+      items: [
+        { q: 'Is there a mileage limit?', a: 'No. All cars in our fleet come with unlimited mileage — drive as much as you like.' },
+        { q: 'What if I can\'t return the car on time?', a: 'Call the manager in advance. We always accommodate and can arrange an extension if the car is available.' },
+        { q: 'Are there any speed restrictions?', a: 'No speed restrictions from our side. Please observe traffic laws and common sense.' },
+        { q: 'Are there any geographical restrictions?', a: 'Cars can be used throughout Russia. Travel abroad is possible with separate approval.' },
+        { q: 'Is there a car delivery service?', a: 'Yes. We deliver and collect the car within the Moscow Ring Road. Delivery outside — by arrangement.' },
+        { q: 'Is a deposit required?', a: 'Yes, the deposit is paid at contract signing and returned on the day the car is returned — no delays.' },
+        { q: 'Can I return the car early?', a: 'Yes. Please notify the manager in advance. Early return terms are outlined in the rental agreement.' },
+        { q: 'Is chauffeur service available?', a: 'Cars are provided without a driver in the standard package. For individual requests, please enquire with the manager.' },
+        { q: 'Can I return the car dirty?', a: 'The car is accepted in the same condition it was issued. Returning it dirty will incur an additional cleaning fee.' },
+        { q: 'Can I return the car with an empty tank?', a: 'No. The car must be returned with the same fuel level as when it was issued.' },
+        { q: 'How is the loyalty card discount applied?', a: 'The discount is applied automatically from the first booking. Card level increases as accumulated rental mileage grows.' },
+      ],
+    },
+
+    useCases: {
+      tag: 'Use cases',
+      h2Line1: '6 reasons',
+      h2Line2: 'to rent now',
+      items: [
+        { title: 'Business trips', desc: 'Arriving at a business meeting in a prestigious car is not a luxury, but part of a professional image.' },
+        { title: 'Travel', desc: 'Explore the Moscow region and beyond with no mileage or territory limits.' },
+        { title: 'Test drive', desc: 'Experience a car in real conditions before buying — a few days of rental beats any dealership test drive.' },
+        { title: 'Temporary replacement', desc: 'Your car is being serviced or repaired? Don\'t change your lifestyle.' },
+        { title: 'Special occasion', desc: 'Wedding, anniversary, milestone event — arrive in a way that will be remembered.' },
+        { title: 'Photo shoots', desc: 'Professional photography with a luxury car in the starring role — for content, advertising or personal use.' },
+      ],
+    },
+
+    places: {
+      tag: 'Destinations',
+      h2Line1: 'Interesting places',
+      h2Line2: 'near Moscow',
+      subtitle: 'Inspiration for your next route — from natural locations to cultural sites',
+      items: [
+        { region: 'Tula Region', title: 'Natural hills and turquoise lakes', desc: 'Unusual landscape with quarry ponds of vivid turquoise colour. Perfect for photo shoots and picnics.', dist: '~3 hrs from Moscow' },
+        { region: 'Moscow Region, Solnechnogorsk', title: 'Scenic 19th-century lake', desc: 'One of the largest artificial reservoirs near Moscow. Beach recreation, water sports, nature walks.', dist: '~1 hr from Moscow' },
+        { region: 'Kaluga Region', title: 'Open-air art park', desc: 'Large-scale art objects amid wild nature. Annual installations, architectural experiments and festivals.', dist: '~4 hrs from Moscow' },
+        { region: 'Moscow Region, Sergiev Posad', title: 'Siberian Husky kennel', desc: 'Meet sled dogs, take a sled ride, and create unforgettable memories with the whole family.', dist: '~2 hrs from Moscow' },
+        { region: 'Kaluga Region', title: 'Ethnographic open-air museum', desc: 'Themed courtyards recreating cultures from around the world. Interactive programmes and living history.', dist: '~3 hrs from Moscow' },
+      ],
+    },
+
+    team: {
+      tag: 'Team',
+      h2Line1: 'People who',
+      h2Line2: 'love what they do',
+      serviceTag: 'Service quality',
+      serviceH3: 'Our standard exceeds expectations',
+      members: [
+        { name: 'Maxim V.', role: 'Delivery Driver', desc: 'Delivers and collects cars across Moscow and the region. Will brief you on the car\'s features and city driving tips.', traits: ['Punctuality', 'Attentiveness', '7 years experience'] },
+        { name: 'Sergei L.', role: 'Rental Manager', desc: 'Helps choose the right car for any task, agrees on terms and answers questions. Always available during business hours.', traits: ['Customer focus', 'Fleet knowledge', 'Fast response'] },
+      ],
+      serviceItems: [
+        { t: 'Delivery & return', d: 'Within Moscow and region at agreed time' },
+        { t: 'Cleanliness', d: 'Dry and wet cleaning before every handover' },
+        { t: 'Diagnostics', d: 'Full technical inspection before each rental' },
+        { t: 'Comfort', d: 'Everything you need is already in the car — no extra charges' },
+        { t: 'Briefing', d: 'We\'ll walk you through the model\'s features' },
+        { t: '24/7 support', d: 'Manager available at any time of day or night' },
+      ],
+      ctaBtn: 'Browse fleet',
+    },
+
+    salePromos: {
+      items: [
+        { badge: 'Season hit', title: 'Free delivery', subtitle: 'for rentals of 5 days or more', desc: 'We deliver and collect the car to any point within the Moscow Ring Road at no extra charge. Available for the entire fleet.', cta: 'Browse fleet' },
+        { badge: 'Referral program', title: 'Refer a friend — get 5%', subtitle: 'via personal promo code', desc: 'Get your personal promo code and share it with friends. Both of you receive a discount on the next booking.', cta: 'Get promo code' },
+        { badge: 'Gift', title: '15% off on your birthday', subtitle: '±3 days from your birthday', desc: 'Rent a premium car with a 15% discount to celebrate your birthday. Confirmation — passport.', cta: 'Book now' },
+        { badge: 'Long-term rental', title: 'Up to 20% off from 30 days', subtitle: 'Platinum loyalty card', desc: 'With a monthly rental and Platinum card, the discount reaches 20%. Perfect for business trips.', cta: 'Learn more' },
+        { badge: 'New arrivals', title: 'First 3 days on new cars', subtitle: 'special price on new fleet additions', desc: 'The first renters of new cars in the fleet get a special price for the first 3 days of rental.', cta: 'View new arrivals' },
+        { badge: 'Early booking', title: 'Book 14+ days ahead', subtitle: 'lock in today\'s price', desc: 'When booking two weeks or more in advance, we lock in the current price and guarantee the car\'s availability.', cta: 'Book now' },
+      ],
+    },
+
+    contacts: {
+      tag: 'Contacts',
+      h1Line1: 'Get in',
+      h1Line2: 'touch',
+      messengersLabel: 'Messengers',
+      mapAddress: 'Comcity B1',
+      mapStreet: 'Kievskoye Hwy, km 22, 6A bld. 1',
+      mapLink: 'Open in Yandex Maps',
+      formTitle: 'Write to us',
+      labelName: 'Name',
+      labelPhone: 'Phone',
+      labelTopic: 'Topic',
+      labelMessage: 'Message',
+      placeholderName: 'Your name',
+      placeholderMessage: 'Describe your request...',
+      topicOptions: ['Car booking', 'Gift certificate', 'List my car', 'Other question'],
+      submit: 'Send message',
+      replyNote: 'We reply within 15 minutes during business hours',
+      successTitle: 'Message sent',
+      successText: 'We\'ll reply within a few minutes',
+      contacts: [
+        { label: 'Phone', value: '+7 999 920-72-52' },
+        { label: 'Email', value: 'wheels4rent.ru@gmail.com' },
+        { label: 'Office address', value: 'Comcity B1, Kievskoye Hwy, km 22, 6A bld. 1, Moscow' },
+        { label: 'Working hours', value: 'Around the clock, 24/7' },
+      ],
+    },
+
+    certificate: {
+      tag: 'Gift Card',
+      h1Line1: 'Gift',
+      h1Line2: 'certificate',
+      subtitle: 'The perfect gift for those who value speed, style and freedom. Valid for the entire fleet with no restrictions.',
+      giftCardLabel: 'Gift Card',
+      nominalLabel: 'Value',
+      recipientLabel: 'Recipient',
+      recipientPlaceholder: 'Recipient name',
+      benefits: ['Valid for entire fleet', 'No expiry date', 'Digital or in envelope', 'Personalised to any name'],
+      denominations: [
+        { value: '₽5,000', desc: '1 day in a sedan' },
+        { value: '₽15,000', desc: '2–3 days in an SUV' },
+        { value: '₽30,000', desc: 'A week in a sports car' },
+        { value: 'Custom amount', desc: 'Enter your desired amount' },
+      ],
+      customAmountPlaceholder: 'Enter amount in ₽',
+      formTitle: 'Order certificate',
+      labelSenderName: 'Your name (giver)',
+      labelRecipientName: 'Recipient\'s name',
+      labelPhone: 'Your phone',
+      labelFormat: 'Format',
+      formats: ['Digital (PDF)', 'In branded envelope'],
+      labelWish: 'Wish (optional)',
+      placeholderSender: 'Alexander',
+      placeholderRecipient: 'Name on certificate',
+      placeholderWish: 'Write a warm message...',
+      submit: 'Order certificate',
+      paymentNote: 'Payment on receipt. Manager will discuss a convenient method.',
+      successTitle: 'Order placed',
+      successText: 'A manager will contact you within 15 minutes to confirm details',
+      selectDenomination: 'Choose a denomination',
+    },
+
+    rentOut: {
+      tag: 'Partnership',
+      h1Line1: 'List your car',
+      h1Line2: 'and earn',
+      subtitle: 'Hand your car over to Wheels4Rent and earn a steady income. We handle everything — clients, insurance, maintenance.',
+      howItWorksLabel: 'How it works',
+      benefits: [
+        { title: 'Steady income', desc: 'Your car can earn up to ₽80,000 per month while sitting in the garage.' },
+        { title: 'Full insurance', desc: 'CASCO coverage for the entire rental period. We\'re responsible for the car\'s safety.' },
+        { title: 'Maintenance on us', desc: 'Service, washing and minor repairs — all included. You get the car back clean.' },
+        { title: 'Transparent reporting', desc: 'Personal dashboard with real-time data on every rental, payment and mileage.' },
+        { title: 'Flexible schedule', desc: 'You decide when to rent it out: weekends, weekdays or round the clock.' },
+        { title: 'Verified clients', desc: 'Strict tenant verification — driving experience, passport, security deposit.' },
+      ],
+      steps: [
+        { title: 'Submit a request', desc: 'Fill out the form or call us. A manager will call back within 15 minutes to answer all questions.' },
+        { title: 'Sign the contract', desc: 'We assess the car\'s condition, agree on terms and sign the contract. Takes 1 hour.' },
+        { title: 'Earn income', desc: 'The car works in our fleet, you receive payouts twice a month to your card.' },
+      ],
+      requirementsTitle: 'Car requirements',
+      requirements: ['Car no older than 5 years', 'Mileage under 120,000 km', 'No liens or restrictions', 'Technically sound', 'Registered in Moscow or Moscow Region'],
+      incomeTag: 'Income example',
+      incomeItems: [{ label: 'Sedan', amount: '₽40,000' }, { label: 'SUV', amount: '₽65,000' }, { label: 'Sports car', amount: '₽90,000' }],
+      incomeNote: 'Average figures at 20 rental days per month',
+      formTitle: 'Submit a request',
+      labelName: 'Your name',
+      labelPhone: 'Phone',
+      labelCarType: 'Car type',
+      carTypes: ['Sedan', 'SUV', 'Sports Car', 'Other'],
+      labelModel: 'Make and model',
+      labelYear: 'Year',
+      labelMileage: 'Mileage, km',
+      labelComment: 'Comment (optional)',
+      placeholderName: 'Alexander',
+      placeholderModel: 'BMW X5 2022',
+      placeholderYear: '2021',
+      placeholderMileage: '45,000',
+      placeholderComment: 'Additional equipment, features...',
+      submit: 'Submit request',
+      privacyNote: 'By clicking, you consent to the processing of personal data',
+      successTitle: 'Request submitted',
+      successText: 'A manager will contact you within 15 minutes to discuss the terms',
+    },
+
+    catalogPage: {
+      searchPlaceholder: 'Search by name...',
+      driveLabel: 'Drive:',
+      driveOptions: [
+        { key: 'all', label: 'All' },
+        { key: 'Полный', label: 'AWD' },
+        { key: 'Задний', label: 'RWD' },
+        { key: 'Передний', label: 'FWD' },
+      ],
+      sortDefault: 'Default',
+      sortPriceAsc: 'Price: low to high',
+      sortPriceDesc: 'Price: high to low',
+      resetBtn: 'Reset',
+      found: (n: number) => `Found: ${n} car${n !== 1 ? 's' : ''}`,
+      emptyTitle: 'No cars found matching your filters',
+      emptyReset: 'Reset filters',
+      btnDetails: 'Details',
+      btnRent: 'Rent',
+      seats: (n: number) => n === 1 ? '1 seat' : `${n} seats`,
+    },
+
+    carPage: {
+      breadHome: 'Home',
+      breadCatalog: 'Catalog',
+      specsTitle: 'Technical specifications',
+      aboutTitle: 'About the car',
+      similarTitle: 'Similar cars',
+      similarAll: 'View all',
+      specLabels: { engine: 'Engine', power: 'Power', seats: 'Seats', drive: 'Drive', transmission: 'Transmission' },
+      priceLabel: 'Rental price',
+      pricePerDay: 'per day · incl. VAT',
+      pricePerks: ['Unlimited mileage', 'Delivery from 5 days', 'Deposit returned same day', 'Full diagnostics before handover'],
+      bookNowBtn: 'Book now',
+      formTitle: 'Submit a request',
+      labelCar: 'Car',
+      labelName: 'Your name',
+      labelPhone: 'Phone',
+      labelDateStart: 'Start date',
+      labelDateEnd: 'End date',
+      deliveryYes: 'Delivery',
+      deliveryNo: 'From office',
+      submitBtn: 'Submit request',
+      privacyText: 'By clicking, you agree to the',
+      privacyLink: 'privacy policy',
+      successTitle: 'Request received',
+      successText: 'We\'ll call you back within 15 minutes',
+      successResend: 'Submit another',
+      backBtn: 'Back to catalog',
+    },
+  },
+} as const;
+
+// Widened type so both RU and ENG are assignable
+export type Translations = {
+  header: { navCatalog: string; navConditions: string; navReviews: string; mobileDiscounts: string; mobileUseCases: string; mobileCertificate: string; mobilePlaces: string; rentOut: string };
+  footer: { tagline: string; navTitle: string; sectionsTitle: string; contactsTitle: string; copyright: string; madeBy: string; madeByStudio: string; links: { catalog: string; conditions: string; reviews: string; discounts: string; useCases: string; certificate: string; places: string; rentOut: string; privacy: string } };
+  hero: { badge: string; h1Line1: string; h1Line2: string; h1Line3: string; subtitle: string; ctaPrimary: string; ctaSecondary: string; statCars: string; statRating: string; statYears: string; floatAvailable: string; floatCategory: string; floatFrom: string; floatPerDay: string; saleBadge: string };
+  benefits: { tag: string; h2Line1: string; h2Line2: string; subtitle: string; marqueeItems: readonly string[]; items: readonly { title: string; desc: string }[] };
+  catalogSection: { tag: string; h2Line1: string; h2Line2: string; subtitle: string; tabs: readonly { slug: string; label: string }[]; btnDetails: string; btnRent: string; btnAllCatalog: string; driveLabel: string; seats: (n: number) => string };
+  howItWorks: { tag: string; h2Line1: string; h2Line2: string; steps: readonly { title: string; desc: string }[] };
+  conditions: { tag: string; h2Line1: string; h2Line2: string; subtitle: string; items: readonly { title: string; desc: string }[] };
+  discounts: { tag: string; h2Line1: string; h2Line2: string; subtitle: string; tiers: readonly { level: string; pct: string; desc: string }[]; specials: readonly { title: string; pct: string; desc: string }[]; giftCta: string; giftCtaLink: string };
+  reviews: { tag: string; h2: string; clientLabel: string; items: readonly { text: string; name: string }[] };
+  booking: { tag: string; h2Line1: string; h2Line2: string; subtitle: string; steps: readonly { n: string; t: string; d: string }[]; labelName: string; labelPhone: string; labelDateStart: string; labelDateEnd: string; labelComment: string; placeholderName: string; placeholderComment: string; deliveryLabel: string; deliveryYes: string; deliveryNo: string; submit: string; privacyText: string; privacyLink: string; successTitle: string; successText: string };
+  faq: { tag: string; h2Line1: string; h2Line2: string; h2Line3: string; subtitle: string; cta: string; items: readonly { q: string; a: string }[] };
+  useCases: { tag: string; h2Line1: string; h2Line2: string; items: readonly { title: string; desc: string }[] };
+  places: { tag: string; h2Line1: string; h2Line2: string; subtitle: string; items: readonly { region: string; title: string; desc: string; dist: string }[] };
+  team: { tag: string; h2Line1: string; h2Line2: string; serviceTag: string; serviceH3: string; members: readonly { name: string; role: string; desc: string; traits: readonly string[] }[]; serviceItems: readonly { t: string; d: string }[]; ctaBtn: string };
+  salePromos: { items: readonly { badge: string; title: string; subtitle: string; desc: string; cta: string }[] };
+  contacts: { tag: string; h1Line1: string; h1Line2: string; messengersLabel: string; mapAddress: string; mapStreet: string; mapLink: string; formTitle: string; labelName: string; labelPhone: string; labelTopic: string; labelMessage: string; placeholderName: string; placeholderMessage: string; topicOptions: readonly string[]; submit: string; replyNote: string; successTitle: string; successText: string; contacts: readonly { label: string; value: string }[] };
+  certificate: { tag: string; h1Line1: string; h1Line2: string; subtitle: string; giftCardLabel: string; nominalLabel: string; recipientLabel: string; recipientPlaceholder: string; benefits: readonly string[]; denominations: readonly { value: string; desc: string }[]; customAmountPlaceholder: string; formTitle: string; labelSenderName: string; labelRecipientName: string; labelPhone: string; labelFormat: string; formats: readonly string[]; labelWish: string; placeholderSender: string; placeholderRecipient: string; placeholderWish: string; submit: string; paymentNote: string; successTitle: string; successText: string; selectDenomination: string };
+  rentOut: { tag: string; h1Line1: string; h1Line2: string; subtitle: string; howItWorksLabel: string; benefits: readonly { title: string; desc: string }[]; steps: readonly { title: string; desc: string }[]; requirementsTitle: string; requirements: readonly string[]; incomeTag: string; incomeItems: readonly { label: string; amount: string }[]; incomeNote: string; formTitle: string; labelName: string; labelPhone: string; labelCarType: string; carTypes: readonly string[]; labelModel: string; labelYear: string; labelMileage: string; labelComment: string; placeholderName: string; placeholderModel: string; placeholderYear: string; placeholderMileage: string; placeholderComment: string; submit: string; privacyNote: string; successTitle: string; successText: string };
+  catalogPage: { searchPlaceholder: string; driveLabel: string; driveOptions: readonly { key: string; label: string }[]; sortDefault: string; sortPriceAsc: string; sortPriceDesc: string; resetBtn: string; found: (n: number) => string; emptyTitle: string; emptyReset: string; btnDetails: string; btnRent: string; seats: (n: number) => string };
+  carPage: { breadHome: string; breadCatalog: string; specsTitle: string; aboutTitle: string; similarTitle: string; similarAll: string; specLabels: { engine: string; power: string; seats: string; drive: string; transmission: string }; priceLabel: string; pricePerDay: string; pricePerks: readonly string[]; bookNowBtn: string; formTitle: string; labelCar: string; labelName: string; labelPhone: string; labelDateStart: string; labelDateEnd: string; deliveryYes: string; deliveryNo: string; submitBtn: string; privacyText: string; privacyLink: string; successTitle: string; successText: string; successResend: string; backBtn: string };
+};
+
+export { t as translations };

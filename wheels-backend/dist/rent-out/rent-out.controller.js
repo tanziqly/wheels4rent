@@ -1,0 +1,75 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RentOutController = void 0;
+const common_1 = require("@nestjs/common");
+const rent_out_service_1 = require("./rent-out.service");
+const create_rent_out_dto_1 = require("./dto/create-rent-out.dto");
+const update_status_dto_1 = require("./dto/update-status.dto");
+const jwt_auth_guard_1 = require("../auth/jwt-auth.guard");
+let RentOutController = class RentOutController {
+    constructor(rentOutService) {
+        this.rentOutService = rentOutService;
+    }
+    findAll() {
+        return this.rentOutService.findAll();
+    }
+    create(dto) {
+        return this.rentOutService.create(dto);
+    }
+    updateStatus(id, dto) {
+        return this.rentOutService.updateStatus(id, dto);
+    }
+    remove(id) {
+        return this.rentOutService.remove(id);
+    }
+};
+exports.RentOutController = RentOutController;
+__decorate([
+    (0, common_1.Get)(),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", void 0)
+], RentOutController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Post)(),
+    __param(0, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [create_rent_out_dto_1.CreateRentOutDto]),
+    __metadata("design:returntype", void 0)
+], RentOutController.prototype, "create", null);
+__decorate([
+    (0, common_1.Patch)(':id/status'),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    __param(0, (0, common_1.Param)('id')),
+    __param(1, (0, common_1.Body)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, update_status_dto_1.UpdateStatusDto]),
+    __metadata("design:returntype", void 0)
+], RentOutController.prototype, "updateStatus", null);
+__decorate([
+    (0, common_1.Delete)(':id'),
+    (0, common_1.UseGuards)(jwt_auth_guard_1.JwtAuthGuard),
+    (0, common_1.HttpCode)(204),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], RentOutController.prototype, "remove", null);
+exports.RentOutController = RentOutController = __decorate([
+    (0, common_1.Controller)('rent-out'),
+    __metadata("design:paramtypes", [rent_out_service_1.RentOutService])
+], RentOutController);
+//# sourceMappingURL=rent-out.controller.js.map
