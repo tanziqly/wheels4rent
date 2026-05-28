@@ -23,8 +23,9 @@ services:
       context: ./wheels-backend
       dockerfile: Dockerfile
     restart: unless-stopped
+    network_mode: host
     environment:
-      DATABASE_URL: postgresql://wheels:wheels_pass@postgres:5432/wheels4rent
+      DATABASE_URL: postgresql://wheels:wheels_pass@localhost:5432/wheels4rent
       JWT_SECRET: ${JWT_SECRET:-wheels4rent-super-secret-change-in-prod}
       ADMIN_LOGIN: ${ADMIN_LOGIN:-admin}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-wheels4rent}
@@ -33,8 +34,6 @@ services:
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
       TELEGRAM_ADMIN_CHAT_ID: ${TELEGRAM_ADMIN_CHAT_ID}
       TELEGRAM_PROXY_URL: ${TELEGRAM_PROXY_URL:-}
-    ports:
-      - '3001:3001'
     volumes:
       - uploads_data:/app/uploads
     depends_on:
