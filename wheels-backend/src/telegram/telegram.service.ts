@@ -4,6 +4,8 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, Between, MoreThanOrEqual } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import { Telegraf, Markup } from 'telegraf';
+import { HttpsProxyAgent } from 'https-proxy-agent';
+import { SocksProxyAgent } from 'socks-proxy-agent';
 import { Booking } from '../bookings/entities/booking.entity';
 import { RentOutRequest } from '../rent-out/entities/rent-out-request.entity';
 
@@ -281,7 +283,16 @@ export class TelegramService implements OnModuleInit, OnModuleDestroy {
       return;
     }
 
-    this.bot = new Telegraf(token);
+    const proxyUrl = this.config.get<string>('TELEGRAM_PROXY_URL');
+    let agent: any = undefined;
+    if (proxyUrl) {
+      agent = proxyUrl.startsWith('socks')
+        ? new SocksProxyAgent(proxyUrl)
+        : new HttpsProxyAgent(proxyUrl);
+      this.log.log(`🔌 Using proxy: ${proxyUrl.replace(/:([^:@]+)@/, ':***@')}`);
+    }
+
+    this.bot = new Telegraf(token, { telegram: { agent } });
     this.registerHandlers();
     this.bot.launch().catch((e) => this.log.error('Bot launch:', e));
     this.log.log('✅ Telegram bot started');

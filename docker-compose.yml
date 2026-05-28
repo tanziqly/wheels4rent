@@ -32,6 +32,7 @@ services:
       FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
       TELEGRAM_ADMIN_CHAT_ID: ${TELEGRAM_ADMIN_CHAT_ID}
+      TELEGRAM_PROXY_URL: ${TELEGRAM_PROXY_URL:-}
     ports:
       - '3001:3001'
     volumes:
